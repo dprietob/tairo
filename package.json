@@ -1,0 +1,17 @@
+{
+  "name": "tairo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.16",
+    "vite": "^7.1.7"
+  }
+}
