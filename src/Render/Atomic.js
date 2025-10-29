@@ -13,7 +13,7 @@ export class Atomic {
         this.#tag = tag;
         this.#options = { ...this.#options, ...options };
         this.#id = this.#uniqid();
-        this.#element = document.createElement(this.#tag);
+        this.#element = HTMLUnknownElement;
     }
 
     static make(tag, options) {
@@ -42,6 +42,8 @@ export class Atomic {
     }
 
     render() {
+        this.#element = document.createElement(this.#tag);
+
         if (this.#element === HTMLUnknownElement) {
             throw `Unknow HTML element: ${this.#tag}`;
         }
@@ -103,7 +105,6 @@ export class Atomic {
 
     #redraw() {
         const currentElement = document.querySelector(`[data-id="${this.#id}"]`);
-        this.#element = document.createElement(this.#tag);
         const newElement = this.render();
 
         if (currentElement) {
